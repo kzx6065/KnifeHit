@@ -18,6 +18,7 @@ public class KnifeSpawner : MonoBehaviour
             var newKnife = Instantiate(knife);
             newKnife.enabled = true;
             newKnife.GetComponent<Collider2D>().enabled = true;
+            GameManager.instance.UseLife();
         }
     }
 }
