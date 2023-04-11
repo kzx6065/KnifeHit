@@ -1,18 +1,23 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class KnifeSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Knife knife;
+
+    private void Start()
     {
-        
+        knife = FindObjectOfType<Knife>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            var newKnife = Instantiate(knife);
+            newKnife.enabled = true;
+            newKnife.GetComponent<Collider2D>().enabled = true;
+        }
     }
 }
