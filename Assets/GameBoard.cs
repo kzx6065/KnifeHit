@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameBoard : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameBoard : MonoBehaviour
     public float minDuration = 2;
     public float maxDuration = 3;
     public Ease ease = Ease.InOutQuart;
+
 
     void Start()
     {
@@ -48,6 +50,9 @@ public class GameBoard : MonoBehaviour
             newApple.transform.localPosition = newApple.transform.up * appleDistance;
             newApple.AddComponent<SpriteRenderer>().sprite = apple;
             newApple.tag = "Apple";
+
+            CircleCollider2D circleCollider2D = newApple.AddComponent<CircleCollider2D>();
+            circleCollider2D.radius = 0.3f;
 
             var direction = (newApple.transform.position - center).normalized;
             newApple.transform.right = direction;

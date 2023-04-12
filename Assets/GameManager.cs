@@ -46,4 +46,12 @@ public class GameManager : MonoBehaviour
             gameoverUICanvasGroup.DOFade(1, duration);
         }
     }
+
+    public Text scoreText;
+    public int score;
+    public void AddScore(int addScore)
+    {
+        score += addScore;
+        scoreText.text = score.ToString();
+    }
 }

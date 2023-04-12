@@ -27,6 +27,8 @@ public class Knife : MonoBehaviour
             case "Apple":
                 //보드에 칼이 꽂힌 연출
                 print("점수증가");
+                GameManager.instance.AddScore(1);
+                Destroy(collision.gameObject); //사과
                 //점수 증가.
                 break;
             case "Knife":
