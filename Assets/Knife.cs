@@ -26,10 +26,12 @@ public class Knife : MonoBehaviour
                 break;
             case "Apple":
                 //보드에 칼이 꽂힌 연출
+                print("점수증가");
                 //점수 증가.
                 break;
             case "Knife":
                 //칼이 튕겨나가게 하기
+                tr.GetComponent<Collider2D>().enabled = false;
                 break;
         }
     }
